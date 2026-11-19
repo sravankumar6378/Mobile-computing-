@@ -1,0 +1,15 @@
+import math
+
+N = int(input("Enter cluster size: "))
+R = float(input("Enter cell radius: "))
+i0 = int(input("Enter number of co-channel cells: "))
+n = int(input("Enter path loss exponent: "))
+C = int(input("Enter total available channels: "))
+
+D = R * math.sqrt(3*N)
+S_I = (D/R)**n / i0
+capacity = C/N
+
+print("Reuse Distance =", round(D, 2))
+print("S/I Ratio =", round(S_I, 2))
+print("Capacity per cell =", round(capacity, 2))

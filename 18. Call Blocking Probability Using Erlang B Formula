@@ -1,0 +1,12 @@
+import math
+
+A = float(input("Enter traffic intensity (Erlangs): "))
+N = int(input("Enter number of channels: "))
+
+B = 1
+
+for i in range(1, N+1):
+    B = (A*B)/(i + A*B)
+
+print("Call Blocking Probability =", round(B, 4))
+print("Blocking Percentage =", round(B*100, 2), "%")

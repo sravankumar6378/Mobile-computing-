@@ -1,0 +1,10 @@
+import math
+f = float(input("Enter frequency (MHz): "))
+d = float(input("Enter distance (km): "))
+Pt = float(input("Enter transmitted power (dBm): "))
+Gt = float(input("Enter transmitter gain (dB): "))
+Gr = float(input("Enter receiver gain (dB): "))
+FSPL = 32.44 + 20 * math.log10(f) + 20 * math.log10(d)
+Pr = Pt + Gt + Gr - FSPL
+print("Free Space Path Loss =", round(FSPL, 2), "dB")
+print("Received Power =", round(Pr, 2), "dBm")

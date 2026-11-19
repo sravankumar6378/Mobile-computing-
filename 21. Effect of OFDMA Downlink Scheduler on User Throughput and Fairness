@@ -1,0 +1,19 @@
+data = [1, 0, 1, 1]
+code = [1, -1, 1, -1]
+
+spread = []
+
+for bit in data:
+    value = 1 if bit == 1 else -1
+    spread.extend([value*x for x in code])
+
+print("Original Data:", data)
+print("Spread Signal:", spread)
+
+despread = []
+
+for i in range(0, len(spread), len(code)):
+    result = sum(spread[i:i+4][j]*code[j] for j in range(4))
+    despread.append(1 if result > 0 else 0)
+
+print("Despread Data:", despread)
